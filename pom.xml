@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Versión de modelo POM de Maven -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Hereda configuraciones de Spring Boot -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.0.1</version> <!-- Versión de Spring Boot -->
+        <relativePath/> <!-- lookup parent from repository --> <!-- Buscar padre en repositorio -->
+    </parent>
+
+    <!-- Información del proyecto -->
+    <groupId>com.example</groupId> <!-- Identificador del paquete principal -->
+    <artifactId>demo</artifactId> <!-- Nombre del proyecto -->
+    <version>0.0.1-SNAPSHOT</version> <!-- Nombre legible --> <!-- Versión del proyecto -->
+    <name>demo</name>
+    <description>Demo project for Spring Boot</description> <!-- Descripción -->
+
+    <!-- Propiedades del proyecto -->
+    <properties>
+        <java.version>25</java.version> <!-- Versión de java usada para compilar -->
+    </properties>
+
+    <!-- Dependencias del proyecto -->
+    <dependencies>
+        <!-- Spring Data JPA: Permite trabajar con bases de datos usando JPA/Hibernate -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Spring WebMVC: Permite crear APIs REST y aplicaciones web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
+        </dependency>
+
+        <!-- Spring Boot DevTools: Habilita reinicio automático y mejoras en desarrollo -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional> <!-- No se incluye en el paquete final -->
+        </dependency>
+
+        <!-- Driver de PostgreSQL: Necesario para conectar con la base de datos -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope> <!-- Solo se usa en tiempo de ejecución -->
+        </dependency>
+
+        <!-- Driver de MongoDB -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
+        <!-- OpenAPI (Swagger) para documentación automática de APIs REST -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+        <!-- Dependencias para pruebas de JPA -->
+        <!-- Pruebas de JPA -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Pruebas de controladores REST -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Configuración de compilación -->
+    <build>
+        <plugins>
+            <!-- Plugin de Spring Boot para ejecutar y empaquetar la aplicación -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId> <!-- Identifica el plugin de Spring Boot -->
+                <artifactId>spring-boot-maven-plugin</artifactId> <!-- Permite comandos como spring-boot:run y empaquetar JAR-->
+            </plugin>
+        </plugins>
+    </build>
+</project>
